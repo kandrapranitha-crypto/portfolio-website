@@ -1,0 +1,157 @@
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+  
+  --color-bg: #ffffff;
+  --color-bg-alt: #fafafa;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-primary: #0f8572;
+  --color-primary-hover: #0b6657;
+  --color-primary-rgb: 15, 133, 114;
+  --color-border: rgba(15, 23, 42, 0.06);
+  --color-grid-line: rgba(15, 23, 42, 0.04);
+  --color-grid-dot: rgba(15, 23, 42, 0.05);
+
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-weight: 400;
+
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+button {
+  font-family: var(--font-sans);
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Background Grid Overlay System */
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.grid-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(var(--color-grid-dot) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Specific horizontal and vertical lines to match layout */
+.grid-line-h {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px dashed var(--color-grid-line);
+}
+
+.grid-line-h.top {
+  top: 80px; /* Header Boundary */
+}
+
+.grid-line-h.bottom {
+  bottom: 80px; /* Footer Boundary */
+}
+
+.grid-line-v {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  border-left: 1px dashed var(--color-grid-line);
+}
+
+.grid-line-v.v1 {
+  left: 25%;
+}
+
+.grid-line-v.v2 {
+  left: 50%;
+}
+
+.grid-line-v.v3 {
+  left: 75%;
+}
+
+@media (max-width: 1024px) {
+  .grid-line-v.v1 {
+    left: 15%;
+  }
+  .grid-line-v.v2 {
+    left: 50%;
+  }
+  .grid-line-v.v3 {
+    left: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-line-v.v1 {
+    left: 10%;
+  }
+  .grid-line-v.v2 {
+    display: none;
+  }
+  .grid-line-v.v3 {
+    left: 90%;
+  }
+  .grid-line-h.top {
+    top: 70px;
+  }
+  .grid-line-h.bottom {
+    bottom: 70px;
+  }
+}
+
