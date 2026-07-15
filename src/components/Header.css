@@ -1,5 +1,5 @@
 .site-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -7,8 +7,11 @@
   display: grid;
   grid-template-columns: 25% 50% 25%;
   align-items: center;
-  z-index: 10;
-  border-bottom: 1px solid transparent; /* Aligns with grid-line-h */
+  z-index: 1000; /* Ensure header stays above fanned-out deck */
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.05);
 }
 
 /* Column 1: Logo & Title */
@@ -72,11 +75,13 @@
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   opacity: 1;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   transform: scaleX(1);
   transform-origin: left;
 }

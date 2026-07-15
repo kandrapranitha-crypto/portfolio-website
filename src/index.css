@@ -94,11 +94,23 @@ button {
   left: 0;
   width: 100%;
   height: 1px;
-  border-top: 1px dashed var(--color-grid-line);
+  /* border-top: 1px dashed var(--color-grid-line); */
+  background-image: linear-gradient(
+    to right, 
+    rgb(230, 228, 228) 0px, 
+    rgb(230, 228, 228) 5px, 
+    transparent 5px, 
+    transparent 7px
+  );
+  background-size: 7px 100%;
 }
 
 .grid-line-h.top {
   top: 80px; /* Header Boundary */
+}
+
+.grid-line-h.middle {
+  top: 50%;
 }
 
 .grid-line-h.bottom {
@@ -110,7 +122,15 @@ button {
   top: 0;
   width: 1px;
   height: 100%;
-  border-left: 1px dashed var(--color-grid-line);
+  /* border-left: 1px dashed rgb(197, 197, 197); */
+  background-image: linear-gradient(
+    to bottom, 
+    rgb(230, 228, 228) 0px, 
+    rgb(230, 228, 228) 5px, 
+    transparent 5px, 
+    transparent 7px
+  );
+  background-size: 100% 7px;
 }
 
 .grid-line-v.v1 {
