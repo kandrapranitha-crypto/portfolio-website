@@ -117,13 +117,15 @@ export default function CardDeck({ isLeaving }) {
               }}
               onMouseLeave={() => setHoveredIdx(null)}
             >
-              <div className="card-image-wrapper">
-                <img
-                  src={project.img}
-                  alt={project.title}
-                  className="card-image"
-                  loading="lazy"
-                />
+              <div className={`card-animation-container ${isFanned && hoveredIdx === null ? 'should-animate' : ''}`}>
+                <div className="card-image-wrapper">
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    className="card-image"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </a>
           );
