@@ -29,7 +29,7 @@ export default function About() {
               That instinct is the thread I want to pull on going forward. My intention, professionally, is to add value to society in the ways I'm best equipped to — through storytelling and community-building. After a break from full-time work, I'm looking to bring both back into my day-to-day.
             </p>
           </div>
-          <a href="/Resume.pdf" download="Pranitha_Reddy_Resume.pdf" className="download-btn">
+          <a href="Resume.pdf" download="Pranitha_Reddy_Resume.pdf" className="download-btn">
             <span className="btn-icon">↓</span> Download Resume
           </a>
         </div>

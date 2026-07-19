@@ -80,7 +80,7 @@
 }
 
 .project-card.is-dimmed {
-  opacity: 0.90;
+  opacity: 0.95;
   filter: grayscale(15%) blur(0.3px);
   transform: translateY(10px) scale(0.95);
 }

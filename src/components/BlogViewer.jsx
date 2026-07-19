@@ -25,7 +25,7 @@ export default function BlogViewer({ activeBlog }) {
 
       <div className="blog-iframe-wrapper">
         <iframe
-          src={`/blogs/${activeBlog}.pdf#toolbar=0&navpanes=0`}
+          src={`blogs/${activeBlog}.pdf#toolbar=0&navpanes=0`}
           className="blog-iframe"
           title={title}
         />

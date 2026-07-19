@@ -152,6 +152,146 @@
   box-shadow: 0 2px 6px rgba(15, 133, 114, 0.2);
 }
 
+/* Hamburger Toggle Button (Mobile Only) */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001; /* Above mobile sidebar */
+}
+
+.mobile-menu-toggle .bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  transform-origin: left center;
+}
+
+.mobile-menu-toggle.active .bar {
+  background-color: var(--color-text);
+}
+
+.mobile-menu-toggle.active .line-1 {
+  transform: rotate(45deg) translateY(-2px) translateX(2px);
+}
+
+.mobile-menu-toggle.active .line-2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-menu-toggle.active .line-3 {
+  transform: rotate(-45deg) translateY(2px) translateX(2px);
+}
+
+/* Sidebar Backdrop */
+.sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.15);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 998;
+  animation: fadeInBackdrop 0.3s ease both;
+}
+
+@keyframes fadeInBackdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile Sidebar Drawer */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 290px;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: -10px 0 40px rgba(15, 23, 42, 0.08);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 40px 40px;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.mobile-sidebar.open {
+  transform: translateX(0);
+}
+
+.mobile-sidebar-nav {
+  flex-grow: 1;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style: none;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-text);
+  opacity: 0.8;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  display: inline-block;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.mobile-nav-link.active {
+  opacity: 1;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.mobile-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.mobile-nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.mobile-sidebar-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mobile-contact-btn {
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(15, 133, 114, 0.2);
+}
+
 /* Responsiveness */
 @media (max-width: 1024px) {
   .site-header {
@@ -176,11 +316,24 @@
     height: 70px;
     padding: 0 1.5rem;
   }
-  .header-logo-section, .header-actions-section {
+  
+  .header-logo-section {
     padding: 0;
     height: auto;
   }
-  .header-nav-section {
-    display: none; /* Hide standard menu on mobile for simplicity, or we can make it a hamburger. For landing, let's keep clean */
+  
+  .header-nav-section,
+  .header-actions-section {
+    display: none; /* Hide standard nav and actions on mobile, delegated to sidebar */
+  }
+
+  .mobile-menu-toggle {
+    display: flex; /* Show hamburger toggle */
+  }
+}
+
+@media (max-width: 425px) {
+  .logo-title {
+    display: none; /* Hide extra description on mobile for spacing */
   }
 }
