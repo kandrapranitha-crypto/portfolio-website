@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kandrapranitha-crypto.github.io/portfolio-website",
+  "homepage": "https://pranithareddy.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
