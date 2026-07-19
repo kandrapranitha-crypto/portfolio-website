@@ -20,7 +20,9 @@ export default function Footer() {
       </div>
 
       {/* Column 2: Spacer */}
-      <div className="footer-spacer-section"></div>
+      <div className="footer-spacer-section">
+        <p className='quote'>Storytelling is not something we do. Storytelling is who we are. ― Carmine Gallo</p>
+      </div>
 
       {/* Column 3: Location / Copyright */}
       <div className="footer-location-section">

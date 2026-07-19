@@ -8,7 +8,6 @@ import BlogViewer from './components/BlogViewer';
 import Footer from './components/Footer';
 
 function App() {
-  const [currentLang, setCurrentLang] = useState('EN');
   const [currentView, setCurrentView] = useState('highlights');
   const [activeBlog, setActiveBlog] = useState(null);
   const [isHighlightsLeaving, setIsHighlightsLeaving] = useState(false);
@@ -72,8 +71,6 @@ function App() {
       <Header
         currentView={currentView}
         onNavigate={navigateTo}
-        currentLang={currentLang}
-        setCurrentLang={setCurrentLang}
       />
 
       {/* Interactive Main Area */}

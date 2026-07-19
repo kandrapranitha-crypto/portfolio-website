@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Header.css';
 
-export default function Header({ currentView, onNavigate, currentLang, setCurrentLang }) {
+export default function Header({ currentView, onNavigate }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleMobileNav = (e, target) => {
@@ -74,12 +74,8 @@ export default function Header({ currentView, onNavigate, currentLang, setCurren
         {/* Column 3: Language and CTA (Desktop) */}
         <div className="header-actions-section">
           <a
-            href="#contact"
+            href="mailto:kandrapranitha@gmail.com"
             className="contact-btn"
-            onClick={(e) => {
-              e.preventDefault();
-              onNavigate('about'); // Links to about section/contact info
-            }}
           >
             Get In Touch
           </a>
@@ -137,9 +133,9 @@ export default function Header({ currentView, onNavigate, currentLang, setCurren
         </nav>
         <div className="mobile-sidebar-actions">
           <a
-            href="#contact"
+            href="mailto:kandrapranitha@gmail.com"
             className="contact-btn mobile-contact-btn"
-            onClick={(e) => handleMobileNav(e, 'about')}
+            onClick={() => setIsMobileMenuOpen(false)}
           >
             Get In Touch
           </a>
