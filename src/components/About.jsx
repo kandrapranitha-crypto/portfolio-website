@@ -23,10 +23,10 @@ export default function About() {
         <div className="about-left-col">
           <div className="about-text-content">
             <p>
-              I've written for brands, interviewed artists, and run research for a growing e-commerce portfolio. I've also managed a hostel in Goa from the ground up — welcoming a constantly rotating mix of strangers and turning them into a community. Different rooms, same instinct: find the story, and build the community around it.
+              Hi, I'm Pranitha. I love building stories and shared experiences. My path hasn’t been a straight line, and I prefer it that way. From managing a beachside hostel, to interviewing artists, and then writing e-commerce copy, newsletters & pitch decks - I explored shaping how people and organizations share their reality.
             </p>
             <p>
-              That instinct is the thread I want to pull on going forward. My intention, professionally, is to add value to society in the ways I'm best equipped to — through storytelling and community-building. After a break from full-time work, I'm looking to bring both back into my day-to-day.
+              Different rooms, same instinct: find the story, and build the community around it. That instinct is the thread I want to pull on going forward. My intention, professionally, is to add value to society in the ways I'm best equipped to - through visual storytelling and community-building. I don’t build for metrics alone. I build for resonance & connection.
             </p>
           </div>
           <a href="Resume.pdf" download="Pranitha_Reddy_Resume.pdf" className="download-btn">
